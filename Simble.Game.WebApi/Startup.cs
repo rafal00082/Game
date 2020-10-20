@@ -8,6 +8,7 @@ using Simple.Game.Domain;
 using Simple.Game.Data;
 using Microsoft.OpenApi.Models;
 using Simple.Game.Abstract.Initialize;
+using Simple.Game.Services;
 
 namespace Simple.Game.WebApi
 {
@@ -28,6 +29,7 @@ namespace Simple.Game.WebApi
 
 
             services.AddRepositoriesDi();
+            services.AddServicesDi();
             services.AddControllers();
 
             services.AddSwaggerGen(c =>

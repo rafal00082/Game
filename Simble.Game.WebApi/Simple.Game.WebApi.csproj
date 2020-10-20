@@ -15,6 +15,7 @@
   <ItemGroup>
     <ProjectReference Include="..\Simple.Game.Data\Simple.Game.Data.csproj" />
     <ProjectReference Include="..\Simple.Game.Domain\Simple.Game.Domain.csproj" />
+    <ProjectReference Include="..\Simple.Game.Services\Simple.Game.Services.csproj" />
   </ItemGroup>
 
 
