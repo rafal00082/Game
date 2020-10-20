@@ -11,9 +11,9 @@ namespace Simple.Game.Services.Services
 {
     public class PlayService: IPlayService
     {
-        private readonly PlayersServiceFactory _playersServiceFactory;
+        private readonly IPlayersServiceFactory _playersServiceFactory;
 
-        public PlayService(PlayersServiceFactory playersServiceFactory)
+        public PlayService(IPlayersServiceFactory playersServiceFactory)
         {
             _playersServiceFactory = playersServiceFactory;
         }

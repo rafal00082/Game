@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Simple.Game.Domain.Entities
 {
-    public class StarsShipEntity: BaseEntity
+    public class StarsShipEntity: BaseEntity, IComparable<StarsShipEntity>
     {
         [Key]
         public int Id { get; set; }
@@ -12,6 +12,11 @@ namespace Simple.Game.Domain.Entities
         public int Crew { get; set; }
         [Range(0, double.MaxValue)]
         public int Wins { get; set; }
+
+        public int CompareTo(StarsShipEntity other)
+        {
+            return Crew.CompareTo(other.Crew);
+        }
 
     }
 }

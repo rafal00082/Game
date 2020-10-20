@@ -16,10 +16,15 @@ namespace Simple.Game.Services
             });
             IMapper mapper = mapperConfig.CreateMapper();
             services.AddSingleton(mapper);
+            services.AddSingleton(typeof(IBussinesComparer<>), typeof(BussinesComparer<>));
 
-            services.AddScoped<IPlayersServiceFactory, PlayersServiceFactory>();
             services.AddScoped<IPersonService, PersonService>();
             services.AddScoped<IStarsShipService, StarsShipService>();
+
+            
+            services.AddScoped<IPlayersServiceFactory, PlayersServiceFactory>();
+            services.AddScoped<IPlayService, PlayService>();
+
         }
     }
 }
