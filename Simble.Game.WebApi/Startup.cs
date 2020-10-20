@@ -5,7 +5,9 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Simple.Game.Domain;
+using Simple.Game.Data;
 using Microsoft.OpenApi.Models;
+using Simple.Game.Abstract.Initialize;
 
 namespace Simple.Game.WebApi
 {
@@ -23,6 +25,9 @@ namespace Simple.Game.WebApi
         {
             services.AddDbContext<GameDbContext>(options =>
              options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+
+
+            services.AddRepositoriesDi();
             services.AddControllers();
 
             services.AddSwaggerGen(c =>
@@ -46,6 +51,8 @@ namespace Simple.Game.WebApi
             {
                 var context = serviceScope.ServiceProvider.GetRequiredService<GameDbContext>();
                 context.Database.Migrate();
+                var dbInitializer = serviceScope.ServiceProvider.GetRequiredService<IDbInicializer>();
+                dbInitializer.SeedInitData().GetAwaiter().GetResult();
             }
 
             app.UseHttpsRedirection();

@@ -1,7 +1,17 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="Initialize\" />
+    <Folder Include="Repositories\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Simple.Game.Abstract\Simple.Game.Abstract.csproj" />
+    <ProjectReference Include="..\Simple.Game.Domain\Simple.Game.Domain.csproj" />
+  </ItemGroup>
 
 </Project>
