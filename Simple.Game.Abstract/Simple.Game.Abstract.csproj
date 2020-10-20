@@ -9,4 +9,8 @@
     <Folder Include="Repositories\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Simple.Game.Domain\Simple.Game.Domain.csproj" />
+  </ItemGroup>
+
 </Project>

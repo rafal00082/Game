@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Simple.Game.Domain.Entities
 {
-    public class PersonEntity
+    public class PersonEntity: BaseEntity
     {
         [Key]
         public int Id { get; set; }

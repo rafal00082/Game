@@ -60,7 +60,7 @@ namespace Simple.Game.WebApi
             app.UseRouting();
 
             app.UseAuthorization();
-
+             
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
