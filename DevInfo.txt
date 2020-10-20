@@ -1,0 +1,2 @@
+Add-Migration Initiate -Project Simple.Game.Domain -StartUpProject Simple.Game.WebApi -Context GameDbContext -OutputDir Migrations
+Update-Database -Context GameDbContext -Project Simple.Game.Domain -StartUpProject Simple.Game.WebApi
