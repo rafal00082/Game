@@ -10,9 +10,9 @@ namespace Simple.Game.Tests.IntegrationTests.PlayServiceTest
     public class StartsShipServiceTest: BaseIntegrationTest
     {
         public static StarsShipEntity s1_crew_10 = new StarsShipEntity { Id = 1, Name = "TestStarShip1", Crew = 10, Wins = 1 };
-        public static StarsShipEntity s2_crew_20 = new StarsShipEntity { Id = 2, Name = "TestStarShip2", Crew = 20, Wins = 2 };
+        public static StarsShipEntity s2_crew_20 = new StarsShipEntity { Id = 2, Name = "TestStarShip2", Crew = 20, Wins = 20 };
         public static StarsShipEntity s3_crew_30 = new StarsShipEntity { Id = 3, Name = "TestStarShip3", Crew = 30, Wins = 3 };
-        public static StarsShipEntity s4_crew_20 = new StarsShipEntity { Id = 4, Name = "TestStarShip4", Crew = 20, Wins = 4 };
+        public static StarsShipEntity s4_crew_20 = new StarsShipEntity { Id = 4, Name = "TestStarShip4", Crew = 20, Wins = 40 };
 
 
 

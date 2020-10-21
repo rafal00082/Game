@@ -8,5 +8,7 @@ namespace Simple.Game.Abstract.Repositories
     {
         public Task<List<T>> GetTwoRandom();
         public Task Update(T entity);
+        public Task<List<T>> Get(int pageNumber, int pageSize, string sortBy, string order);
+        public Task<long> GetAmount();
     }
 }

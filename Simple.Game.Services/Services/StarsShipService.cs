@@ -1,7 +1,9 @@
 ﻿using AutoMapper;
 using Simple.Game.Abstract.Repositories;
 using Simple.Game.Abstract.Services;
+using Simple.Game.Contract;
 using Simple.Game.Contract.Play;
+using Simple.Game.Contract.StarsShip;
 using Simple.Game.Domain.Entities;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -20,6 +22,18 @@ namespace Simple.Game.Services.Services
             _starsShipRepository = starsShipRepository;
             _bussinesComparer = bussinesComparer;
             _mapper = mapper;
+        }
+
+        public async Task<PagingListResponse<StarsShipResponse>> Get(int pageNumber, int pageSize, string sortBy, string order)
+        {
+            var entriesList = await _starsShipRepository.Get(pageNumber, pageSize, sortBy, order);
+            var amount = await _starsShipRepository.GetAmount();
+            var result = new PagingListResponse<StarsShipResponse>
+            {
+                Items = _mapper.Map<List<StarsShipResponse>>(entriesList),
+                PagingInfo = new PagingInfoResponse(pageSize, pageNumber, amount)
+            };
+            return result;
         }
 
         public async Task<List<PlayResponse>> Play()

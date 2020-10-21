@@ -1,6 +1,8 @@
 ﻿using AutoMapper;
 using Simple.Game.Abstract.Repositories;
 using Simple.Game.Abstract.Services;
+using Simple.Game.Contract;
+using Simple.Game.Contract.Person;
 using Simple.Game.Contract.Play;
 using Simple.Game.Domain.Entities;
 using System.Collections.Generic;
@@ -20,6 +22,18 @@ namespace Simple.Game.Services.Services
             _presonRepository = personRepository;
             _bussinesComparer = bussinesComparer;
             _mapper = mapper;
+        }
+
+        public async Task<PagingListResponse<PersonResponse>> Get(int pageNumber, int pageSize, string sortBy, string order)
+        {
+            var entriesList = await _presonRepository.Get(pageNumber, pageSize, sortBy, order);
+            var amount = await _presonRepository.GetAmount();
+            var result = new PagingListResponse<PersonResponse>
+            {
+                Items = _mapper.Map<List<PersonResponse>>(entriesList),
+                PagingInfo = new PagingInfoResponse(pageSize, pageNumber, amount)
+            };
+            return result;
         }
 
         public async Task<List<PlayResponse>> Play()
