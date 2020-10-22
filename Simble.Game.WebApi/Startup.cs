@@ -57,6 +57,13 @@ namespace Simple.Game.WebApi
                 dbInitializer.SeedInitData().GetAwaiter().GetResult();
             }
 
+            app.UseCors(x => x
+                .AllowAnyMethod()
+                .AllowAnyHeader()
+                .SetIsOriginAllowed(origin => true) // allow any origin
+                .AllowCredentials());
+
+
             app.UseHttpsRedirection();
 
             app.UseRouting();
@@ -65,7 +72,7 @@ namespace Simple.Game.WebApi
              
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapControllers();
+                endpoints.MapDefaultControllerRoute();
             });
 
             app.UseSwagger();
