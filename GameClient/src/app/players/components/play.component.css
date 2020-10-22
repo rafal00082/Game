@@ -1,0 +1,19 @@
+.players-div{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  } 
+  .main-div{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .select-div{
+      margin: 3rem;
+  }
+  .button-div{
+    margin: 3rem;
+}

@@ -1,0 +1,16 @@
+<div class="player-div">
+  <p class="player-caption">{{playerCaption}}</p>
+<mat-card [ngClass]="!model.isWinner?'player-card':'player-card-winner'">
+  <mat-card-header class="card-title">
+    <mat-card-title>Name: {{model.name}}</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <br/>
+    <span>Value: {{model.value}}</span>
+    <br/>
+    <span>Wins: {{model.wins}}</span>
+    <br/>
+    <span style="font-weight: bolder;color: green;" *ngIf="model.isWinner">!!!!WINNER!!!!</span>
+  </mat-card-content>
+</mat-card>
+</div>

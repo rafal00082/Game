@@ -1,0 +1,23 @@
+<div class="main-div">
+    <mat-divider></mat-divider>
+  <section>
+    <div class="select-div">
+    <mat-form-field>
+      <mat-label>Choose kind of player</mat-label>
+      <mat-select [(value)]="selection">
+        <mat-option value="1">Person</mat-option>
+        <mat-option value="2">StarsShip</mat-option>
+      </mat-select>
+  </mat-form-field>
+  </div>
+    <div class="button-div">
+    <button mat-raised-button color="primary" style="width : 10rem;"(click)="onClick()">Play</button>
+    </div>
+  </section>
+  <mat-divider></mat-divider>
+
+<div class="players-div">
+    <app-player playerCaption='Player 1' [model] = player1></app-player>
+    <app-player playerCaption='Player 2'[model] = player2></app-player>    
+</div>
+
