@@ -4,6 +4,7 @@ import { environment } from 'src/environments/environment';
 
 import { HttpClient } from '../../../../node_modules/@angular/common/http';
 import { Observable } from '../../../../node_modules/rxjs';
+import { PlayersKindItem } from '../models/playerkinditem.model';
 
 
 @Injectable({
@@ -15,5 +16,8 @@ export class PlayService {
 
   play = (kind: string): Observable<Player[]> => {
     return this.http.get<Player[]>(environment.apiAdress + 'play/' + kind);
+  }
+  getPlayersKindItems = (): Observable<PlayersKindItem[]> => {
+    return this.http.get<PlayersKindItem[]>(environment.apiAdress + 'selectitem/getPlayersKindEnumAsSelectItems');
   }
 }

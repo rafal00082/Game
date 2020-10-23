@@ -4,9 +4,8 @@
     <div class="select-div">
     <mat-form-field>
       <mat-label>Choose kind of player</mat-label>
-      <mat-select [(value)]="selection">
-        <mat-option value="1">Person</mat-option>
-        <mat-option value="2">StarsShip</mat-option>
+      <mat-select [(value)]= "selection">
+        <mat-option *ngFor="let selectItem of (playersKindItems$|async)" value={{selectItem.id}}>{{selectItem.name}}</mat-option>
       </mat-select>
   </mat-form-field>
   </div>
