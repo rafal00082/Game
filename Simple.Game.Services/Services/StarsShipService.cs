@@ -36,6 +36,11 @@ namespace Simple.Game.Services.Services
             return result;
         }
 
+        public async Task<PagingListResponse<StarsShipResponse>> Get(PagingInfoRequest pagingInfo)
+        {
+            return await Get(pagingInfo.PageNumber, pagingInfo.PageSize, pagingInfo.SortBy, pagingInfo.Order);
+        }
+
         public async Task<List<PlayResponse>> Play()
         {
             _ = new List<PlayResponse>();

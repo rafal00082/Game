@@ -7,5 +7,6 @@ namespace Simple.Game.Abstract.Services
     public interface IStarsShipService:IPlayerService
     {
         public Task<PagingListResponse<StarsShipResponse>> Get(int pageNumber, int pageSize, string sortBy, string order);
+        public Task<PagingListResponse<StarsShipResponse>> Get(PagingInfoRequest pagingInfo);
     }
 }
